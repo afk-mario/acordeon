@@ -1,2 +1,3 @@
 import './style.css';
-export {default} from './acordeon.js';
+
+export { default } from './acordeon';

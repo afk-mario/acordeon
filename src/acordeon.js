@@ -41,8 +41,8 @@ class Acordeon {
     const { openClass, contentSelector } = this.settings;
     const [content] = el.querySelectorAll(contentSelector);
 
-    const { scrollHeight, style } = content;
-    const maxHeight = `0px`;
+    const { style } = content;
+    const maxHeight = '0px';
 
     style.maxHeight = maxHeight;
     el.classList.remove(openClass);
@@ -63,8 +63,7 @@ class Acordeon {
   };
 
   showAll = () => {
-    const { show, panels } = this;
-    const { openClass, contentSelector } = this.settings;
+    const { Show, panels } = this;
 
     panels.forEach(el => {
       Show(el);
@@ -80,13 +79,7 @@ class Acordeon {
 
   init = () => {
     const { panels } = this;
-    const {
-      showAll,
-      hideAll,
-      showFirst,
-      showId,
-      headerSelector,
-    } = this.settings;
+    const { showAll, hideAll, showId, headerSelector } = this.settings;
 
     panels.forEach(el => {
       const [header] = el.querySelectorAll(headerSelector);
