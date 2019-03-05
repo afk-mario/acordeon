@@ -1,30 +1,34 @@
-const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+import { join } from 'path';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+
+const context = join(__dirname, 'src');
+const dist = join(__dirname, 'dist');
 
 module.exports = {
+  context,
+  entry: './index',
   devtool: 'cheap-module-source-map',
-  entry: './src/index.js',
   output: {
     filename: '[name].js',
-    library: 'Acordeon',
-    libraryTarget: 'umd',
-    umdNamedDefine: true,
-    libraryExport: 'default',
-    path: path.resolve(__dirname, 'dist'),
+    path: dist,
     sourceMapFilename: '[name].map',
+    library: 'acordeon',
+    libraryTarget: 'umd',
+    libraryExport: 'default',
+    umdNamedDefine: true,
   },
   module: {
     rules: [
       {
         test: /\.js/,
-        exclude: /(node_modules|bower_components)/,
+        include: context,
         use: {
           loader: 'babel-loader',
         },
       },
       {
         test: /\.css$/,
+        include: context,
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -38,11 +42,4 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css',
-    }),
-  ],
 };

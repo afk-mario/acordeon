@@ -9,6 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   };
 
-  const acordeon = new Acordeon(props);
-  acordeon.init();
+  const collapse = new acordeon(props);
+  collapse.init();
 });
