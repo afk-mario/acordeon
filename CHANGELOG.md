@@ -7,5 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 
-## [1.0.0] - 2019-03-04
-### Added
+## [1.0.1] - 2019-03-04
+### Fixed
+- Change module export to dist instead of src

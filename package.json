@@ -1,8 +1,8 @@
 {
   "name": "acordeon",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A dead simple animated collapse for JS",
-  "module": "src/index.js",
+  "module": "dist/main.js",
   "scripts": {
     "start": "webpack --watch --progress --mode=development",
     "build": "NODE_ENV=production webpack -p",
