@@ -1,6 +1,6 @@
 {
   "name": "acordeon",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A dead simple animated collapse for JS",
   "module": "dist/main.js",
   "scripts": {
