@@ -2,10 +2,11 @@
   "name": "acordeon",
   "version": "1.0.0",
   "description": "A dead simple animated collapse for JS",
-  "main": "src/index.js",
+  "module": "src/index.js",
   "scripts": {
     "start": "webpack --watch --progress --mode=development",
     "build": "NODE_ENV=production webpack -p",
+    "serve": "serve ./",
     "lint": "eslint 'src/**/*.js'",
     "lint:fix": "eslint --fix 'src/**/*.js'",
     "lint:format": "prettier --write 'src/**/*.js'"
@@ -50,6 +51,7 @@
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.6.0",
     "prettier": "^1.16.4",
+    "serve": "^10.1.2",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3"
   }

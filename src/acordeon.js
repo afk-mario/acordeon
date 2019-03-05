@@ -4,8 +4,8 @@ const defaultSettings = {
   onlyOne: false,
   showId: undefined,
   openClass: '-open',
-  headerSelector: '.collapse-header',
-  contentSelector: '.collapse-content',
+  headerSelector: '.acordeon-header',
+  contentSelector: '.acordeon-content',
 };
 
 class Acordeon {

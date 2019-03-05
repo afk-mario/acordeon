@@ -7,6 +7,10 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: '[name].js',
+    library: 'Acordeon',
+    libraryTarget: 'umd',
+    umdNamedDefine: true,
+    libraryExport: 'default',
     path: path.resolve(__dirname, 'dist'),
     sourceMapFilename: '[name].map',
   },
