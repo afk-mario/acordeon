@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding-bottom: 20px;
+}
+
+h1 {
+  font-size: 3em;
+  font-family: 'Spectral', serif;
+  padding-bottom: 10px;
+  border-bottom: 2px solid black;
+}
+
+.acordeon-container {
+  border: 1px solid black;
+}
+
+.acordeon-container:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.acordeon-header {
+  font-size: 2em;
+  font-family: 'Spectral', serif;
+  padding: 10px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid whitesmoke;
+  transition: border-color 0.2s ease;
+}
+.acordeon-header:hover {
+  border-color: black;
+}
+
+.acordeon-header .arrow {
+  display: block;
+  color: black;
+  transform-origin: 50% 50%;
+  transition: transform 0.2s ease;
+}
+
+.acordeon-content {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.acordeon-content > *:first-child {
+  padding-top: 10px;
+}
+
+.acordeon-content > *:last-child {
+  padding-bottom: 10px;
+}
+
+.acordeon-container.-open .acordeon-header .arrow {
+  transform: rotate(90deg);
+}
