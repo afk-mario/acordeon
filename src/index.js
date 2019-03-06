@@ -10,15 +10,15 @@ const defaultSettings = {
   contentSelector: '.acordeon-content',
 };
 
+const defaultSelector = '.acordeon-container';
+
 class Acordeon {
-  constructor({
-    selector = '.acordeon-container',
-    settings = {},
-    onShow = () => {},
-    onHide = () => {},
-  }) {
+  constructor(props) {
+    const { selector, settings = {}, onShow = () => {}, onHide = () => {} } =
+      props || {};
+
     this.settings = { ...defaultSettings, ...settings };
-    this.selector = selector;
+    this.selector = selector || defaultSelector;
     this.onShow = onShow;
     this.onHide = onHide;
     this.panels = document.querySelectorAll(selector);
@@ -61,6 +61,7 @@ class Acordeon {
   toggleById = id => {
     const { panels } = this;
     const el = panels[id];
+    if (!el) return;
     this.toggle(el);
   };
 
@@ -72,7 +73,7 @@ class Acordeon {
     });
   };
 
-  hideAll = ({ ignore = undefined }) => {
+  hideAll = ({ ignore = undefined } = {}) => {
     const { Hide, panels } = this;
     panels.forEach(el => {
       if (ignore !== el) Hide(el);
