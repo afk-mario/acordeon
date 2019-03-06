@@ -175,3 +175,5 @@ typings/
 
 .tern*
 dist
+coverage
+.nyc_output
