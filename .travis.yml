@@ -12,3 +12,5 @@ notifications:
   email: false
 script:
   - yarn validate
+after_success:
+  - yarn report-coverage
